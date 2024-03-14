@@ -1,11 +1,28 @@
+---
+import Link from '@/components/Link.astro';
+---
 <nav class="flex justify-between py-14">
-    <a class="text-primary" href="#">compleet labs</a>
-    <div class="text-secondary flex gap-4">
-        <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">Technology</a>
-        <a href="#">Case studies</a>
-        <a href="#">About</a>
-        <a class="text-primary" href="#">Hire us</a>
+    <Link href="/" content="compleet labs" styles='text-primary font-semibold'/>
+    <div class="text-secondary flex gap-4 ">
+        <Link href="/" content="Home" styles='hover:text-primary'/>
+        <Link href="/services" content="Services" styles='hover:text-primary active:text-primary'/>
+        <Link href="/technology" content="Technology" styles='hover:text-primary'/>
+        <Link href="/case-studies" content="Case studies" styles='hover:text-primary'/>
+        <Link href="/about" content="About" styles='hover:text-primary'/>
+        <Link content="Hire us" styles="text-primary">
+            <Link/>
     </div>
 </nav>
+
+<script>
+    const Links = document.querySelectorAll('a') as NodeListOf<HTMLAnchorElement>;
+    const url = window.location.href    
+    
+    Links.forEach(link => {
+        if (link.href===url){
+            link.classList.add('text-primary')
+    }
+    })
+
+
+</script>

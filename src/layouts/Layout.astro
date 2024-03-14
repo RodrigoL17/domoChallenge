@@ -1,6 +1,7 @@
 ---
 // Supports weights 100-900
 import '@fontsource-variable/montserrat';
+import Navbar from '@/components/Navbar.astro';
 interface Props {
 	title: string;
 }
@@ -19,7 +20,10 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="w-full min-h-screen">
-		<slot />
+		<main class="text-white max-w-[80%] mx-auto">
+			<Navbar/>
+			<slot />
+		</main>
 	</body>
 </html>
 <style is:global>
