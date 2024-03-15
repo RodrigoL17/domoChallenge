@@ -8,9 +8,9 @@ import ContactSection from "@/sections/contactSection.astro";
 ---
 
 <Layout title="Home">
-  <div id="img-background" class="h-screen inset-0 absolute"></div>
   <div id="background">
-    <main class="text-white max-w-[70%] mx-auto">
+    <div id="img-background" class="h-screen inset-0 absolute -z-10"></div>
+    <main class="text-white max-w-[70%] mx-auto bg-transparent relative">
       <IntroSection />
       <ServiceSection />
       <TechnologiesSection />
@@ -19,15 +19,16 @@ import ContactSection from "@/sections/contactSection.astro";
     </main>
   </div>
 </Layout>
+
 <style>
   #background {
     background-image: linear-gradient(
       to bottom,
-      #273244 0%,
-      #273244 35%,
-      #4670f6 35%,
-      #4670f6 65%,
-      #ffffff 65%,
+      transparent 0%,
+      transparent 37%,
+      #4670f6 37%,
+      #4670f6 67%,
+      #ffffff 67%,
       #ffffff 95%,
       #273244 95%
     );
@@ -38,4 +39,5 @@ import ContactSection from "@/sections/contactSection.astro";
     background-size: contain;
     background-position: top right;
   }
+
 </style>
