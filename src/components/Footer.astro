@@ -13,65 +13,63 @@ import Link from "./Link.astro";
       tengo 32 años. Aunque me he especializado en el desarrollo full-stack,
       siento una pasión especial por el front-end.
     </p>
-    <div class="flex flex-row gap-6">
+    <div>
       <Link
         href="https://www.linkedin.com/in/rodrigo-lezama/"
         target="_blank"
         rel="noopener noreferrer"
       >
         <Icon slot="icon-left" width="24" icon="linkedin" />
-        <Link />
-        <Link
+      <Link />
+      <Link
           href="https://github.com/RodrigoL17"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Icon slot="icon-left" width="24" icon="github" />
-          <Link />
-          <Link
+        <Icon slot="icon-left" width="24" icon="github" />
+      <Link />
+       <Link
             content="pedo"
             href="https://rodrigolezama.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon slot="icon-left" width="24" icon="chrome" />
-            <Link />
-          </Link>
-        </Link>
-        <section class="flex gap-10 flex-1">
-          <div class="felx flex-col gap-10">
-            <h4 class="uppercase text-xs font-semibold">sitemap</h4>
-            <ul class="text-secondary">
-              <li><Link content="Home" href="/" /></li>
-              <li><Link content="Technology" href="/technology" /></li>
-              <li><Link content="Services" href="/services" /></li>
-              <li><Link content="About" href="/about" /></li>
-            </ul>
-          </div>
-          <div class="felx flex-col gap-10">
-            <h4 class="uppercase text-xs font-semibold">case studies</h4>
-            <ul class="text-secondary">
-              <li><Link content="Swiss Airlines" /></li>
-              <li><Link content="Google" /></li>
-              <li><Link content="Apple" /></li>
-              <li><Link content="Nike" /></li>
-            </ul>
-          </div>
-          <div>
-            <h4>
-              <ul>
-                <li>
+        <Icon slot="icon-left" width="24" icon="chrome" />
+      <Link />
+
+    </div>
+  </section>  
+          <section class="flex gap-10 flex-1">
+            <div class="felx flex-col gap-10">
+              <h4 class="uppercase text-xs font-semibold">sitemap</h4>
+              <ul class="text-secondary">
+                <li><Link content="Home" href="/" /></li>
+                <li><Link content="Technology" href="/technology" /></li>
+                <li><Link content="Services" href="/services" /></li>
+                <li><Link content="About" href="/about" /></li>
+              </ul>
+            </div>
+            <div class="felx flex-col gap-10">
+              <h4 class="uppercase text-xs font-semibold">case studies</h4>
+              <ul class="text-secondary">
+                <li><Link content="Swiss Airlines" /></li>
+                <li><Link content="Google" /></li>
+                <li><Link content="Apple" /></li>
+                <li><Link content="Nike" /></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="uppercase text-xs font-semibold">Contact</h4>
+              <ul class="text-secondary">
+                <li class="flex gap-2">
                   Mail: <Link
                     mailto="cordolezama@gmail.com"
                     content="cordolezama@gmail.com"
                   />
-                  <li>Tel: +54 9 11 35964530</li>
+
+                  <li>Tel: +54 9 11 3596-4530</li>
                 </li>
               </ul>
-            </h4>
-          </div>
-        </section>
-      </Link>
-    </div>
-  </section>
-</footer>
+            </div>
+          </section>
+   </footer>
