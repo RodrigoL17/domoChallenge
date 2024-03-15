@@ -3,13 +3,18 @@ interface Props {
     href?: string;
     content?: string;
     styles?: string;
+    id?: string;
+    target?: '_blank' | '_self' | '_parent' | '_top';
+    rel?: string,
+    mailto?: string
 }
 
-const { href= '#', content, styles} = Astro.props
+const { href= '#', content, styles, id, target, rel, mailto} = Astro.props
 ---
 
-<a class={styles} href={href} >
+<a target={target} id={id} class={styles} href={mailto ? `mailto:${mailto}` : href} rel={rel} >
     <slot name="icon-left"/>
     {content}
     <slot name="icon-right" />
 </a>
+

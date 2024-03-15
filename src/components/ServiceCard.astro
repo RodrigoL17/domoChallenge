@@ -1,0 +1,27 @@
+---
+import { IconsPath } from "@/utils/const";
+import Icon from "@/components/Icon.astro";
+import Link from "@/components/Link.astro";
+
+interface Props {
+  serviceIcon: keyof typeof IconsPath;
+  title: string;
+  description: string;
+  href?: string;
+}
+
+const { serviceIcon, title, description, href = "#" } = Astro.props;
+---
+
+<article class="bg-primary rounded-sm py-10 px-4 flex flex-col text-center items-center gap-6">
+  <div class="p-4 rounded-full flex items-center justify-center  bg-bgSecondary">
+    <Icon icon={serviceIcon} styles="items-center flex" width="40" />
+  </div>
+  <h3 class="text-cardTitle font-semibold text-xl">{title}</h3>
+  <p class="text-secondary text-balance">{description}</p>
+  <Link
+    content="Learn more"
+    href={href}
+    styles="text-secondary px-8 py-2 border border-secondary rounded-sm mt-8"
+  />
+</article>

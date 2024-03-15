@@ -1,0 +1,42 @@
+---
+import Link from "@/components/Link.astro";
+import Icon from "@/components/Icon.astro";
+---
+<section class="flex flex-col gap-8 mt-80">
+  <div class="text-balance flex flex-col gap-4 max-w-[50%]">
+    <h1 class="text-5xl text-primary font-bold">
+      We build beautiful and reliable web solutions
+    </h1>
+    <div>
+      <p class="text-secondary font-semibold">
+        We strongly believe that communication, trust and transparency are
+        essential elements of succesfull business relationship.
+      </p>
+      <p class="text-secondary font-semibold">Ready for the journey?</p>
+    </div>
+  </div>
+  <div class="flex gap-6 font-semibold text-sm">
+    <Link
+      styles="text-secondary px-8 py-2 border border-secondary rounded-sm"
+      content="Learn more"
+      href="#"
+    />
+    <Link
+      styles="flex items-center gap-2 bg-bgSecondary px-8 py-2 rounded-sm"
+      content="Our Projects"
+      href="#"
+    >
+      <Icon slot="icon-right" icon="arrow_right" width="16"/>
+      <Link />
+    </Link>
+  </div>
+</section>
+
+<style>
+    #background {
+      background-image: url("/asset-background.webp");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: top right;
+  }
+</style>

@@ -1,21 +1,23 @@
 ---
 import Link from '@/components/Link.astro';
+import Icon from '@/components/Icon.astro';
 ---
-<nav class="flex justify-between py-14">
+<nav class="flex justify-between py-14 max-w-[70%] mx-auto">
     <Link href="/" content="compleet labs" styles='text-primary font-semibold'/>
-    <div class="text-secondary flex gap-4 ">
-        <Link href="/" content="Home" styles='hover:text-primary'/>
-        <Link href="/services" content="Services" styles='hover:text-primary active:text-primary'/>
-        <Link href="/technology" content="Technology" styles='hover:text-primary'/>
-        <Link href="/case-studies" content="Case studies" styles='hover:text-primary'/>
-        <Link href="/about" content="About" styles='hover:text-primary'/>
-        <Link content="Hire us" styles="text-primary">
-            <Link/>
+    <div class="text-secondary flex gap-4 font-medium">
+        <Link id='nav-bar-link' href="/" content="Home" styles='hover:text-primary'/>
+        <Link id='nav-bar-link' href="/services" content="Services" styles='hover:text-primary active:text-primary'/>
+        <Link id='nav-bar-link' href="/technology" content="Technology" styles='hover:text-primary'/>
+        <Link id='nav-bar-link' href="/case-studies" content="Case studies" styles='hover:text-primary'/>
+        <Link id='nav-bar-link' href="/about" content="About" styles='hover:text-primary'/>
+        <Link content="Hire us" styles="text-primary flex items-center gap-2">
+            <Icon slot="icon-left" width="16" icon='adress_card'/>
+        <Link/>
     </div>
 </nav>
 
 <script>
-    const Links = document.querySelectorAll('a') as NodeListOf<HTMLAnchorElement>;
+    const Links = document.querySelectorAll('#nav-bar-link') as NodeListOf<HTMLAnchorElement>;
     const url = window.location.href    
     
     Links.forEach(link => {
@@ -23,6 +25,4 @@ import Link from '@/components/Link.astro';
             link.classList.add('text-primary')
     }
     })
-
-
 </script>

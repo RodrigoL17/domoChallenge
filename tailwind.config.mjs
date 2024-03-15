@@ -6,6 +6,7 @@ export default {
 			colors:{
 				primary: '#ffffff',
 				secondary: '#9499a1',
+				cardTitle:	'#030303',
 				bgPrimary: '#273244',
 				bgSecondary: '#4670f6',
 			}

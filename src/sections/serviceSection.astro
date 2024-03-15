@@ -1,0 +1,32 @@
+---
+import ServiceCard from "@/components/ServiceCard.astro";
+---
+
+<section class="mt-80 pb-20 flex flex-col gap-10">
+  <div class="flex flex-col gap-4">
+    <h2 class="text-primary text-center text-4xl font-bold">Our Services</h2>
+    <p class="text-secondary text-center max-w-[50%] mx-auto font-semibold">
+      We feel very strong about our skills when it comes to planning, designing
+      and coding applications. Here is what we love to do!
+    </p>
+  </div>
+  <div class="flex gap-12">
+    <ServiceCard
+      serviceIcon="file"
+      title="Business & Product Concept"
+      description=`Analyse business and product concepts at Start-up Workshops or Ongoing Projects'
+         Audits and prepare a viable and sensible product roadmap for achieving a perfect market fit.`
+    />
+    <ServiceCard
+      serviceIcon="computer"
+      title="Web & Mobile Development"
+      description="Plan, develop and test high-quality web-applications using AngularJS, NodeJS, JavaScript, Typescript, HTML5 and SASS/CSS3 frameworks and native mobile languages."
+    />
+    <ServiceCard
+      serviceIcon="pencil"
+      title="UX & UI Design"
+      description="Sketch information architecture and simple mock-ups, conver them into clickable prototypes and finish with usable interface designs to deliver a good and reliable user experience."
+    />
+  </div>
+</section>
+

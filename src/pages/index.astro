@@ -1,9 +1,32 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
+import IntroSection from "@/sections/IntroSection.astro";
+import ServiceSection from "@/sections/serviceSection.astro";
+import TechnologiesSection from "@/sections/technologiesSection.astro";
+import LogosSection from "@/sections/logosSection.astro";
+import ContactSection from "@/sections/contactSection.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<h1>Home</h1>
+<Layout title="Home">
+  <div id="img-background" class="h-screen inset-0 absolute"></div>
+  <div id="background">
+    <main class="text-white max-w-[70%] mx-auto">
+      <IntroSection />
+      <ServiceSection />
+      <TechnologiesSection />
+      <LogosSection />
+      <ContactSection />
+    </main>
+  </div>
 </Layout>
-
-
+<style>
+  #background {
+    /* background-image: linear-gradient(to bottom, #273244 90%, #4670f6 10%); */
+  }
+  #img-background {
+    background-image: url("/asset-background.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top right;
+  }
+</style>
