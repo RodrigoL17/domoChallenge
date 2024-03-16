@@ -8,9 +8,9 @@ import ContactSection from "@/sections/contactSection.astro";
 ---
 
 <Layout title="Home">
-  <div id="background">
-    <div id="img-background" class="opacity-50 xs:opacity-100 h-screen inset-0 absolute -z-10"></div>
-    <main class="text-white xs:max-w-[70%] xs:mx-auto bg-transparent relative">
+  <div id="background" >
+    <div id="img-background" class="opacity-30 xs:opacity-100 h-screen inset-0 absolute -z-10"></div>
+    <main class="text-white max-w-[90%] xs:max-w-[70%] mx-auto bg-transparent relative">
       <IntroSection />
       <ServiceSection />
       <TechnologiesSection />
@@ -21,7 +21,7 @@ import ContactSection from "@/sections/contactSection.astro";
 </Layout>
 
 <style>
-  #background {
+  /* #background {
     background-image: linear-gradient(
       to bottom,
       transparent 0%,
@@ -32,7 +32,7 @@ import ContactSection from "@/sections/contactSection.astro";
       #ffffff 95%,
       #273244 95%
     );
-  }
+  } */
   #img-background {
     background-image: url("/asset-background.webp");
     background-repeat: no-repeat;
