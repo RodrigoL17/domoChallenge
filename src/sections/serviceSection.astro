@@ -1,32 +1,40 @@
 ---
 import ServiceCard from "@/components/ServiceCard.astro";
+import Carrousel from "@/components/Carrousel.astro";
 ---
 
-<section class="hidden xs:mt-60 xs:flex xs:flex-col xs:gap-10">
+<section class="mt-32 xs:mt-60 flex flex-col gap-5 xs:gap-10">
   <div class="flex flex-col gap-4">
-    <h2 class="text-primary text-center text-4xl font-bold">Our Services</h2>
-    <p class="text-secondary text-center max-w-[50%] mx-auto font-semibold">
+    <h2 class="text-primary text-center text-2xl xs:text-4xl font-bold">
+      Our Services
+    </h2>
+    <p
+      class="text-secondary text-center text-xs xs:text-base max-w-[50%] mx-auto font-semibold"
+    >
       We feel very strong about our skills when it comes to planning, designing
       and coding applications. Here is what we love to do!
     </p>
   </div>
-  <div class="flex gap-12">
+  <Carrousel />
+  <div class="gap-12 hidden xs:flex xs:visible">
     <ServiceCard
+      iconWidth="40"
       serviceIcon="file"
       title="Business & Product Concept"
       description=`Analyse business and product concepts at Start-up Workshops or Ongoing Projects'
          Audits and prepare a viable and sensible product roadmap for achieving a perfect market fit.`
     />
     <ServiceCard
+      iconWidth="40"
       serviceIcon="computer"
       title="Web & Mobile Development"
       description="Plan, develop and test high-quality web-applications using AngularJS, NodeJS, JavaScript, Typescript, HTML5 and SASS/CSS3 frameworks and native mobile languages."
     />
     <ServiceCard
+      iconWidth="40"
       serviceIcon="pencil"
       title="UX & UI Design"
       description="Sketch information architecture and simple mock-ups, conver them into clickable prototypes and finish with usable interface designs to deliver a good and reliable user experience."
     />
   </div>
 </section>
-

@@ -8,20 +8,21 @@ interface Props {
   title: string;
   description: string;
   href?: string;
+  iconWidth?: string
 }
 
-const { serviceIcon, title, description, href = "#" } = Astro.props;
+const { serviceIcon, title, description, href = "#", iconWidth } = Astro.props;
 ---
 
-<article class="bg-primary rounded-sm py-10 px-4 flex flex-col text-center items-center gap-6">
-  <div class="p-4 rounded-full flex items-center justify-center  bg-bgSecondary">
-    <Icon icon={serviceIcon} styles="items-center flex" width="40" />
+<article class="bg-primary rounded-sm py-3 px-3 xs:py-10 xs:px-4 flex flex-col text-center items-center gap-2 xs:gap-6">
+  <div class="p-2 xs:p-4 rounded-full flex items-center justify-center  bg-bgSecondary">
+    <Icon icon={serviceIcon} styles="items-center flex" width={iconWidth} />
   </div>
-  <h3 class="text-cardTitle font-semibold text-xl">{title}</h3>
-  <p class="text-secondary text-balance">{description}</p>
+  <h3 class="text-cardTitle font-semibold xs:text-xl">{title}</h3>
+  <p class="text-secondary text-balance max-w-[80%] xs:w-full text-xs xs:text-base">{description}</p>
   <Link
     content="Learn more"
     href={href}
-    styles="text-secondary px-8 py-2 border border-secondary rounded-sm mt-8"
+    styles="text-secondary px-4 py-1 xs:px-8 xs:py-2 border border-secondary text-xs xs:text-base rounded-sm mt-2 xs:mt-8"
   />
 </article>
