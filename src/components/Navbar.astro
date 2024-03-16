@@ -1,28 +1,99 @@
 ---
-import Link from '@/components/Link.astro';
-import Icon from '@/components/Icon.astro';
+import Link from "@/components/Link.astro";
+import Icon from "@/components/Icon.astro";
+import { IconsPath } from "@/utils/const";
+
+const Id = "nav-bar-link";
+
+interface Pages {
+  content?: string;
+  href?: string;
+  id?: string;
+  styles?: string;
+  icon?: {
+    icon: keyof typeof IconsPath;
+    width?: string;
+    slot?: string;
+  };
+}
+
+const Pages: Array<Pages> = [
+  { content: "Home", href: "/", id: Id, styles: "hover:text-primary" },
+  {
+    content: "Services",
+    href: "/services",
+    id: Id,
+    styles: "hover:text-primary",
+  },
+  {
+    content: "Technology",
+    href: "/technology",
+    id: Id,
+    styles: "hover:text-primary",
+  },
+  { content: "About", href: "/about", id: Id, styles: "hover:text-primary" },
+  {
+    content: "Contact",
+    href: "/contact",
+    id: Id,
+    styles: "hover:text-primary",
+  },
+  {
+    content: "Hire us",
+    styles: "text-primary flex items-center gap-2",
+    icon: { icon: "adress_card", width: "16", slot: "icon-left" },
+  },
+];
 ---
-<nav class="flex justify-between py-14 max-w-[70%] mx-auto">
-    <Link href="/" content="compleet labs" styles='text-primary font-semibold'/>
-    <div class="text-secondary flex gap-4 font-medium">
-        <Link id='nav-bar-link' href="/" content="Home" styles='hover:text-primary'/>
-        <Link id='nav-bar-link' href="/services" content="Services" styles='hover:text-primary active:text-primary'/>
-        <Link id='nav-bar-link' href="/technology" content="Technology" styles='hover:text-primary'/>
-        <Link id='nav-bar-link' href="/case-studies" content="Case studies" styles='hover:text-primary'/>
-        <Link id='nav-bar-link' href="/about" content="About" styles='hover:text-primary'/>
-        <Link content="Hire us" styles="text-primary flex items-center gap-2">
-            <Icon slot="icon-left" width="16" icon='adress_card'/>
-        <Link/>
-    </div>
+
+<nav
+  class="relative py-6 text-xs flex items-center max-w-[90%] justify-between mx-auto xs:text-base xs:py-14 xs:max-w-[70%]"
+>
+  <Link href="/" content="compleet labs" styles="text-primary font-semibold" />
+  <button id="menu-btn" class="xs:hidden text-primary"
+    ><Icon icon="menu" width="24" /></button
+  >
+  <ul
+    id="menu-container"
+    class=" absolute top-20 right-0 xs:static xs:visible text-secondary flex-col xs:flex-row gap-4 font-medium"
+  >
+    {
+      Pages.map(({ content, href, id, styles, icon }) => (
+        <li>
+          {!icon ? (
+            <Link id={id} href={href} content={content} styles={styles} />
+          ) : (
+            <Link id={id} content={content} href={href} styles={styles}>
+              <Icon slot={icon.slot} icon={icon.icon} width={icon.width} />
+            </Link>
+          )}
+        </li>
+      ))
+    }
+  </ul>
 </nav>
 
 <script>
-    const Links = document.querySelectorAll('#nav-bar-link') as NodeListOf<HTMLAnchorElement>;
-    const url = window.location.href    
-    
-    Links.forEach(link => {
-        if (link.href===url){
-            link.classList.add('text-primary')
+  const Links = document.querySelectorAll(
+    "#nav-bar-link"
+  ) as NodeListOf<HTMLAnchorElement>;
+  const url = window.location.href;
+
+  Links.forEach((link) => {
+    if (link.href === url) {
+      link.classList.add("text-primary");
     }
-    })
+  });
+
+  const menuBtn = document.querySelector("#menu-btn") as HTMLButtonElement;
+  const menuContainer = document.querySelector(
+    "#menu-container"
+  ) as HTMLDivElement;
+
+  menuBtn.addEventListener("click", () => {
+    if (menuContainer.classList.contains("hidden")) {
+    }
+    menuContainer.classList.remove("hidden");
+    menuContainer.classList.add("flex");
+  });
 </script>
