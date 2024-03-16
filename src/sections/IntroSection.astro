@@ -2,20 +2,28 @@
 import Link from "@/components/Link.astro";
 import Icon from "@/components/Icon.astro";
 ---
-<section class="hidden xs:flex xs:flex-col xs:gap-8 xs:mt-80">
-  <div class="text-balance flex flex-col gap-4 max-w-[50%]">
-    <h1 class="text-5xl text-primary font-bold">
+
+<section class="flex flex-col gap-8 xs:mt-80 mt-40">
+  <div
+    class="text-balance text-center xs:text-start flex flex-col gap-10 xs:gap-4 xs:max-w-[50%]"
+  >
+    <h1 class="text-3xl xs:text-5xl text-primary font-bold">
       We build beautiful and reliable web solutions
     </h1>
     <div>
-      <p class="text-secondary font-semibold">
+      <p class="text-secondary text-xs xs:text-base font-semibold">
         We strongly believe that communication, trust and transparency are
         essential elements of succesfull business relationship.
       </p>
-      <p class="text-secondary font-semibold">Ready for the journey?</p>
+      <p class="text-secondary font-semibold text-xs xs:text-base">
+        Ready for the journey?
+      </p>
     </div>
   </div>
-  <div class="flex gap-6 font-semibold text-sm">
+  <div
+    class="flex justify-center
+ xs:justify-start gap-6 font-semibold text-xs xs:text-sm"
+  >
     <Link
       styles="text-secondary px-8 py-2 border border-secondary rounded-sm"
       content="Learn more"
@@ -26,10 +34,8 @@ import Icon from "@/components/Icon.astro";
       content="Our Projects"
       href="#"
     >
-      <Icon slot="icon-right" icon="arrow_right" width="16"/>
+      <Icon slot="icon-right" icon="arrow_right" width="16" />
       <Link />
     </Link>
   </div>
 </section>
-
-
