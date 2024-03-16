@@ -55,7 +55,7 @@ const Pages: Array<Pages> = [
   >
   <ul
     id="menu-container"
-    class=" absolute top-20 right-0 xs:static xs:visible text-secondary flex-col xs:flex-row gap-4 font-medium"
+    class=" absolute hidden transition duration-200 ease-in-out top-20 right-0 xs:flex xs:static xs:visible text-secondary flex-col xs:flex-row gap-4 font-medium"
   >
     {
       Pages.map(({ content, href, id, styles, icon }) => (
@@ -91,9 +91,7 @@ const Pages: Array<Pages> = [
   ) as HTMLDivElement;
 
   menuBtn.addEventListener("click", () => {
-    if (menuContainer.classList.contains("hidden")) {
-    }
-    menuContainer.classList.remove("hidden");
-    menuContainer.classList.add("flex");
+    menuContainer.classList.toggle("flex");
+    menuContainer.classList.toggle("hidden");
   });
 </script>
