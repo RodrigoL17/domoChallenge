@@ -1,10 +1,12 @@
 ---
 import Icon from "@/components/Icon.astro";
+import CarrouselLogos from "@/components/CarrouselLogos.astro";
 ---
 
-<section class="hidden xs:mt-80 xs:flex xs:flex-col xs:items-center text-secondary xs:gap-10">
-  <h3 class="uppercase  text-center text-sm font-bold">Clients we worked with</h3>
-  <div class="flex justify-between w-full items-center ">
+<section class="xs:mt-80 mt-32 flex flex-col xs:items-center text-secondary xs:gap-10">
+  <h3 class="uppercase text-center text-xs xs:text-sm font-bold">Clients we worked with</h3>
+  <CarrouselLogos />
+  <div class="hidden xs:flex xs:justify-between w-full xs:items-center ">
     <Icon icon="tnw" width="160" />
     <Icon icon="google" width="160" />
     <Icon icon="nike" width="140" />
