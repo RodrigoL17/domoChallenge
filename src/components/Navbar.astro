@@ -50,12 +50,12 @@ const Pages: Array<Pages> = [
   class="relative py-6 text-xs flex items-center max-w-[90%] justify-between mx-auto xs:text-base xs:py-14 xs:max-w-[70%]"
 >
   <Link href="/" content="compleet labs" styles="text-primary font-semibold" />
-  <button id="menu-btn" class="xs:hidden text-primary"
+  <button id="menu-btn" class="md:hidden text-primary"
     ><Icon icon="menu" width="24" /></button
   >
   <ul
     id="menu-container"
-    class=" absolute hidden transition duration-200 ease-in-out top-7 right-10 xs:flex xs:static xs:visible text-secondary flex-col xs:flex-row gap-4 font-medium"
+    class=" absolute hidden transition duration-200 ease-in-out top-7 right-10 md:flex md:static md:visible text-secondary flex-col md:flex-row gap-4 font-medium"
   >
     {
       Pages.map(({ content, href, id, styles, icon }) => (
